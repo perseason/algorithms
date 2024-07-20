@@ -23,7 +23,7 @@ public class MaxSlidingWindow_LeetCode_239 {
         res[0] = priorityQueue.peek()[0];
         for (int i = k; i < nums.length; i++) {
             priorityQueue.offer(new int[]{nums[i], i});
-            if (priorityQueue.peek()[1] <= k - i) {
+            while (priorityQueue.peek()[1] <= i - k) {
                 priorityQueue.poll();
             }
             res[i - k + 1] = priorityQueue.peek()[0];
