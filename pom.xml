@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>algorithms-substring</module>
+        <module>algorithms-array</module>
     </modules>
 
 </project>
