@@ -7,13 +7,17 @@ package pers.lilpen.array;
  */
 public class Rotate_LeetCode_189 {
     public void rotate(int[] nums, int k) {
-        if (nums.length == 1 || nums.length ==0) {
+        if (nums.length == 1 || nums.length == 0) {
             return;
         }
-        for (int i = 0; i < k; i++) {
-            int cur = nums[nums.length - 1];
-            System.arraycopy(nums, 0, nums, 1, nums.length - 1);
-            nums[0] = cur;
+        k = k >= nums.length ? k % nums.length : k;
+        int[] tmp = new int[k];
+        //[1, 2, 3, 4]
+        int idx = nums.length - 1;
+        for (int i = k - 1; i >= 0; i--) {
+            tmp[i] = nums[idx--];
         }
+        System.arraycopy(nums, 0, nums, k, nums.length - k);
+        System.arraycopy(tmp, 0, nums, 0, k);
     }
 }
