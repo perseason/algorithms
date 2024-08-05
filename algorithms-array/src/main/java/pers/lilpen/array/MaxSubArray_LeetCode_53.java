@@ -1,7 +1,5 @@
 package pers.lilpen.array;
 
-import java.util.ArrayList;
-
 /**
  * @author : phs
  * @version : 1.0
@@ -12,7 +10,7 @@ public class MaxSubArray_LeetCode_53 {
         int pre = 0;
         int maxSum = nums[0];
         for (int num : nums) {
-            pre = Math.max(pre + num, num);
+            pr + num, num);
             maxSum = Math.max(maxSum, pre);
         }
         return maxSum;
